@@ -1,0 +1,51 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: genre path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: genre_search
+  - action: utter_genre
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: song by artist path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: song_by_artist_search
+  - action: utter_songs
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
